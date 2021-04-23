@@ -1,0 +1,56 @@
+extends layout 
+block content 
+    Employee Registration
+        form(action='/employee/newEmployee' method='POST' name='Employee-Registration' enctype='multipart/form-data')
+            .row 
+                .col-3
+                    label(for='employeeName') Employee Name
+                        input#employeeName(type='text' name='employeeName')
+                .col-3    
+                    label(for='date') Birth Date
+                        input#date(type='date' name='date')
+                .col-3 
+                    label(for='nin') NIN
+                        input#nin(type='text' name='nin')
+                .col-3    
+                    label(for='age') Age
+                        input#age(type='number' name='age' min='18' max='200')
+            hr            
+            .row    
+                .col-4
+                    label(for='phoneNumber') Phone Number
+                        input#phoneNumber(type='tel' name='phoneNumber')
+                .col-4
+                    label(for='residence') Residence
+                        input#residence(type='text' name='residence')
+                .col-4
+                    label(for='employeeNum') Employee Number
+                        input#employeeNum(type='text' name='employeeNum')
+            hr
+            div 
+                h6 Gender 
+                    .row 
+                        .col-4
+                            label(for='male') Male &nbsp;
+                            input#male(type="radio" name='gender' value='male') 
+                            br
+                            label(for='female') Female &nbsp;
+                            input#female(type="radio" name='gender' value='female') 
+                        .col-4    
+                            label(for='role') Role
+                            select#role(name='role')
+                                option(value='driver') Driver
+                                option(value='conductor') Conductor
+                        .col-4
+                            div    
+                                label(for='license') Driver&apos;s License
+                                    input#license(type='text' name='license')
+            .row 
+                .col-6
+                    label(for='incidents') Past Incidents
+                        textarea#incidents(name='incidents' cols='20' rows='2')
+                .col-6
+                    label(for='imageUpload') Upload Image
+                        input#imageUpload(type='file' name='imageUpload')
+            div    
+                    button.btn.btn-primary#register(type="submit") Register

@@ -1,0 +1,54 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+body{
+    font-family: 'Arvo', serif;
+    background: hsl(0, 0%, 100%);
+    min-height: 100vh;
+    
+}
+.navbar{
+    width:100px;
+    height:100vh;
+    position: fixed;
+    background-color: #dedede;
+    transition: 0.4s;
+    margin-left: -350px;
+
+}
+.nav-link{
+    font-size: 1.25em;
+
+}
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover{
+    background-color: rgb(161, 155, 155);
+    color: white;
+}
+.nav-link a{
+    color: white;
+}
+
+
+.my-container{
+    transition:0.4s;
+
+}
+/* for navbar  */
+.active-nav{
+    margin-left: 0;
+}
+
+/* for main section  */
+.active-cont{
+    margin-left: 400px;
+}
+#menu-btn{
+    background-color: green;
+    color: white;
+
+}

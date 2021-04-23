@@ -1,0 +1,24 @@
+extends layout 
+block content 
+    card-title REGISTER USER
+    .container
+        form(action='/register' method='post')
+            .row 
+                .col-12
+                    label(for='name') Name &nbsp;
+                        input#name(type='text' name='name')
+            .row 
+                .col-12
+                    label(for='userName') User Name
+                        input#userName(type='text' name='userName')
+            .row 
+                .col-12
+                    label(for='password') Create Password
+                        input#createPass(type='password' name='password')
+            .row 
+                .col-12
+                    label(for='confirmPass') Confirm Password
+                        input#confirmPass(type='password' name='confirmPass')
+            .row 
+                .col-12   
+                    button.btn.btn-primary(type='submit') Register

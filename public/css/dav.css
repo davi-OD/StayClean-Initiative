@@ -1,0 +1,73 @@
+body{
+    font-family: sans-serif;
+    background-color:gray;
+}
+h6{
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 800;
+}
+.card-title{
+    text-align: center;
+    text-transform: uppercase;
+    color:gray;
+    font-size: 24px;
+    font-weight: bold;
+}
+.card{
+    top: 2.0rem;
+    margin: 10px;
+    padding: 1px;
+    background-color:aliceblue;
+}
+
+.card-body{
+    margin-left: 20px;
+    size: inherit;
+}
+
+button{
+    color:gray;
+    background-color:thistle;
+    padding: 5px;
+    font-weight: 600;
+    border-radius: 10px;
+    width: 50%;
+    float: left;
+    
+}
+nav{
+    display: flex;
+    padding: 0.5rem;
+    background-color:thistle;
+}
+ul{
+    list-style-type: none;
+    display:flex;
+    float: right;
+}
+li{
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+li > a{
+    color:gray;
+    text-decoration: none;
+}
+li > :hover{
+    color: gold;
+}
+li > :active{
+    color: greenyellow;
+}
+label{
+    text-transform:uppercase;
+    font-weight: bold;
+    font-size: 15px;
+}
+input{
+    border-radius: 5px;
+    border-width: thin;
+    border-color: gray;
+    box-shadow: none;
+    margin-left: 10px;
+}

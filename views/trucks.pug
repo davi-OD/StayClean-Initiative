@@ -1,0 +1,44 @@
+extends layout 
+block content 
+    header.card-holder 
+        h4.card-title Welcome 
+    .form-row 
+        .col.form-group
+            a(href="/trucks/trucksReg") Add Truck 
+        .pull-right 
+        a(href="/order") List of Order
+    .form-row 
+        .col.form-group.col-md-12 
+            form.search(action='/trucks')
+                .form-row 
+                    .col-md-8
+                        input.form-control(name="truckType" placeholder="Enter your search term(truckType)")
+                    .col-md-4 
+                        input.btn.btn-dark.btn-block(type="submit")    
+    table.table     
+        thead.thead-dark    
+            tr 
+                th Truck Name
+                th Truck Number 
+                th Truck Type
+                th Status
+                th  
+                th    
+            tbody
+                if cars.length 
+                each car in cars 
+                    tr
+                        td #{car.truckName}
+                        td #{car.truckNumber}
+                        td #{car.truckType}
+                        td #{car.truckStatus}
+                        td 
+                            a(href='./trucks/updStatus/' + car._id) Update Status
+                        td 
+                            form(method="post" action='/trucks/deploy')
+                                input(type="hidden", placeholder="", name="id", value=car._id)
+                                button.btn.btn-dark.btn-block(type="submit") Deploy
+
+
+
+        

@@ -1,0 +1,12 @@
+extends layout 
+block content
+    .card-title User Login
+        .container
+        form(action='/login' method='post')
+                    label(for='userName') User Name &nbsp;
+                        input#userName(type='text' name='userName')
+                    BR
+                    label(for='password') Password &nbsp;
+                        input#password(type='password' name='password')
+                    BR
+                    button.btn.btn-primary(type='submit') Login

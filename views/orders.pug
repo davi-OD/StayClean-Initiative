@@ -1,0 +1,42 @@
+extends layout 
+block content 
+        header.card-holder
+            h4.card-title Orders
+        .form-row
+            .col.form-group
+                a(href='/orders/serviceOrder') New Order
+            .pull-right 
+            a(href='/') Home 
+        .form-row 
+            .col.form-group.col-md-12 
+                form.search(action='/orders/')
+                    .form-row 
+                        .col-md-8
+                            input.form-control(name="truckType" placeholder="Enter your search term(truckType)")
+                        .col-md-4 
+                            input.btn.btn-dark.btn-block(type="submit")       
+        table.table-dark 
+            thead.thead-dark
+                tr  
+                    th Customer Name 
+                    th Contact
+                    th NIN 
+                    th Location
+                    th Order Number
+                    th Service
+                    th Amount
+                    th Truck Allocated
+                    th
+                tbody 
+                    if parks.length
+                    each park in parks
+                        tr  
+                            td #{park.customerName}
+                            td #{park.contact}
+                            td #{park.idNumber}
+                            td #{park.location}
+                            td #{park.serviceType}
+                            td #{park.charge}
+                            td #{park.truckNumber}
+                            td
+

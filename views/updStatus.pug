@@ -1,0 +1,24 @@
+extends layout 
+block content 
+    header.card-header  
+        h4.card-title Welcome 
+    .form-row 
+        .col.form-group.col-md-12 
+            .form-row 
+                .col-md-10 
+                    p Truck Name #{car.truckName}
+    form(method="post" action="/trucks/updStatus?id="+car._id)
+        table.table 
+            thead.thead-dark 
+                tr 
+                    th Truck Name 
+                    td 
+                        input.form-control(value = car.truckName  name="truckName")
+                tr    
+                    th Status
+                    td 
+                        input.form-control(value = car.truckStatus name="truckStatus")
+                tr  
+                    td(colspan=2)
+                        button.btn.btn-dark.btn-block(type="submit") Update
+

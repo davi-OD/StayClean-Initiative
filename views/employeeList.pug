@@ -1,0 +1,40 @@
+extends layout 
+block content 
+    header.card-holder 
+        h4.card-title Welcome 
+    .form-row 
+        .col.form-group
+            a(href="/employee/newEmployee") New Employee 
+        .pull-right 
+        a(href="/order") List of Order
+    .form-row 
+        .col.form-group.col-md-12 
+            form.search(action='/employee')
+                .form-row 
+                    .col-md-8
+                        input.form-control(name="role" placeholder="Enter your search term(role)")
+                    .col-md-4 
+                        input.btn.btn-dark.btn-block(type="submit")    
+    table.table     
+        thead.thead-dark    
+            tr 
+                th Full Name
+                th NIN 
+                th Gender 
+                th Role
+                th  
+                th
+            tbody 
+                if pick.length 
+                each person in pick 
+                    tr 
+                        td #{person.employeeName}
+                        td #{person.nin}
+                        td #{person.gender}
+                        td #{person.role}
+                        td 
+                            a(href='/employee/update/' + person._id) Update
+                        td 
+                            form(method="post" action='/employee/delete')
+                                input(type="hidden", placeholder="", name="id", value=person._id)
+                                button.btn.btn-dark.btn-block(type="submit") Delete

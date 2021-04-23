@@ -1,0 +1,38 @@
+extends layout 
+block content 
+    card-title TRUCK REGISTRATION
+    form(action='/trucks/trucksReg' method='post')
+        .container.col-6
+            .row
+                .col-6
+                    label(for='truckName') Truck Name &nbsp;
+                        input#truckName(type='text' name='truckName') 
+                .col-6
+                    label(for='modelNumber') Model Number
+                        input#modelNumber(type='text' name='modelNumber')
+            hr
+            .row 
+                .col-12
+                    label(for='truckNumber') Truck Number &nbsp;
+                        input#truckNumber(type='text' name='truckNumber')
+            h6 Truck Category
+            .row 
+                .col-12
+                    label(for='sewageTruck') Sewage Emptier &nbsp;
+                        input#sewageTruck(type='radio' name='truckType' value='Sewage Emptier')
+                    br    
+                    label(for='gargabeTruck') Garbage Collector &nbsp;
+                        input#garbageTruck(type='radio' name='truckType' value='Garbage Collector') 
+            h6 Status
+            .row 
+                .col-12 
+                    input#truckStatus(type="radio", name="truckStatus" value="Out of service")          
+                    label(for='truckStatus') Out of service &nbsp;
+                    input#truckStatus(type="radio", name="truckStatus" value="Out on route") 
+                    label(for='truckStatus') Out on route &nbsp;
+                    input#truckStatus(type="radio", name="truckStatus" value="Free to deploy")             
+                    label(for='truckStatus') Free to deploy &nbsp;
+                    input#truckStatus(type="radio", name="truckStatus" value="Returning to HQ")             
+                    label(for='truckStatus') Returning to HQ 
+                                       
+            button.btn.btn-primary(type='submit') Add Truck

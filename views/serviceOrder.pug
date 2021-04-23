@@ -1,0 +1,55 @@
+extends layout 
+block content 
+    card-title CUSTOMER ORDERS
+    .container
+    form(action='/orders/serviceOrder' method='post')
+            .row 
+                .col-6
+                    label(for='customerName') Customer Name
+                        input#customerName(type='text' name='customerName')
+                .col-6    
+                    label(for='contact') Contact
+                        input#contact(type='text' name='contact')
+                    hr
+            .row 
+                .col-6
+                    label(for='idNumber') NIN
+                        input#idNumber(type='text' name='idNumber')
+                .col-6    
+                    label(for='location') Location
+                        input#location(type='text' name='location')
+                    hr
+            .row 
+                .col-6
+                    label(for='orderNumber') Order Number
+                        input#orderNumber(type='text' name='orderNumber')
+                .col-6    
+                    label(for='orderTime') Order Time
+                        input#orderTime(type='time' name='orderTime')
+            h6 Service Ordered
+            .row 
+                .col-6
+                    label(for='sewageEmpty') Sewage Empty &nbsp;
+                        input#sewageEmpty(type='checkbox' name='serviceType' value='Sewage Empty')
+                    br
+                    label(for='garbageCollection') Garbage Collection &nbsp;
+                        input#garbageCollection(type='checkbox' name='serviceType' value='Garbage collection')
+                .col-6    
+                    label(for='numberOfTrucks') Number Of Trucks
+                        input#numberOFTrucks(type='number' name='numberOFTrucks' min='1' max='1000')
+            hr
+            div
+            label(for='accountType') Account Type
+            select#accoutType(name='accountType')
+                option(value='oneTime') One Time
+                option(value='subscription') Subscription
+            h6 Charge
+            .row 
+                .col-6
+                    label(for='shillings') Shs.
+                        input#charge(type='text' name='charge')
+                .col-6    
+                    label(for='truckNumber') Truck Allocated
+                        input#truckNumber(type='text' name='truckNumber')
+            div
+                button.btn.btn-primary(type='submit') Confirm Order
